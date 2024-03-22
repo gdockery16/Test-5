@@ -1,10 +1,5 @@
 using System;
 
-public void AddRating(Rating rating)
-{
-    this.Rating.Add(rating);
-}
-
 namespace Blue.Zebra.Domain.Catalog
 {
     public class Item
@@ -15,33 +10,38 @@ namespace Blue.Zebra.Domain.Catalog
         public string Brand { get; set; }
         public decimal Price { get; set; }
         public List<Rating> Ratings { get; set; } = new List<Rating>();
-    }
-}
 
-public Item(string name, string description, string brand, decimal price)
-{
-    if(string.IsNullOrEmpty(name))
-    {
-        throw new ArgumentNullException(name);
-    }
+        public Item(string name, string description, string brand, decimal price)
+        {
+            if(string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException(name);
+            }
+            
+            if(string.IsNullOrEmpty(description))
+            {
+                throw new ArgumentNullException(description);
+            }
+            
+            if(string.IsNullOrEmpty(brand))
+            {
+                throw new ArgumentNullException(brand);
+            }
+            
+            if(price < 0.00m)
+            {
+                throw new ArgumentNullException("Price must be greater than zero.");
+            }
+            
+            Name = name;
+            Description = description;
+            Brand = brand;
+            Price = price;
+        }
 
-    if(string.IsNullOrEmpty(description))
-    {
-        throw new ArgumentNullException(description);
+        public void AddRating(Rating rating)
+        {
+            this.Ratings.Add(rating);
+        }
     }
-
-    if(string.IsNullOrEmpty(brand))
-    {
-        throw new ArgumentNullException(brand);
-    }
-
-    if(price < 0.00m)
-    {
-        throw new ArgumentNullException("Price must be greater than zero.");
-    }
-
-    Name = name;
-    Description = description;
-    Brand = brand;
-    Price = price;
 }
