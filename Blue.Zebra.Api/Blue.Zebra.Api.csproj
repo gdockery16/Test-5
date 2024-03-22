@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <RootNamespace>Blue_Zebra_Api.Api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blue-Zebra-Api.Domain\Blue-Zebra-Api.Domain.csproj" />
+    <ProjectReference Include="..\Blue.Zebra.Domain\Blue.Zebra.Domain.csproj" />
   </ItemGroup>
 
 </Project>
