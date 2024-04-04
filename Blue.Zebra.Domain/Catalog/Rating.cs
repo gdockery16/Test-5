@@ -2,6 +2,7 @@ namespace Blue.Zebra.Domain.Catalog;
 
 public class Rating
 {
+    public int ID {get; set;}
     public int Stars { get; set; }
     public string UserName { get; set; }
     public string Review{ get; set; }
