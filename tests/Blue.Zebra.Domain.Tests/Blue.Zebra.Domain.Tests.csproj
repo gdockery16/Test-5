@@ -20,4 +20,8 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Blue.Zebra.Domain\Blue.Zebra.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
